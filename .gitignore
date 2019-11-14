@@ -16,3 +16,10 @@
 # JDT-specific (Eclipse Java Development Tools)
 ############
 .classpath
+.tern-project
+
+# Portlet gen
+###########
+docroot/css/.sass-cache/
+docroot/WEB-INF/classes/
+docroot/WEB-INF/lib/
