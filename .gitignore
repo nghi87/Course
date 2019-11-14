@@ -1,0 +1,25 @@
+# Don't track content of these folders
+.settings/
+
+# Compiled source #
+###################
+*.class
+
+# Packages #
+############
+*.jar
+
+# Eclipse Core
+############
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+############
+.classpath
+.tern-project
+
+# Portlet gen
+###########
+docroot/css/.sass-cache/
+docroot/WEB-INF/classes/
+docroot/WEB-INF/lib/
