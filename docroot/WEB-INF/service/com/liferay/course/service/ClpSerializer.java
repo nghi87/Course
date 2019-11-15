@@ -15,6 +15,7 @@
 package com.liferay.course.service;
 
 import com.liferay.course.model.CourseClp;
+import com.liferay.course.model.CourseRegisterClp;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -106,6 +107,10 @@ public class ClpSerializer {
 			return translateInputCourse(oldModel);
 		}
 
+		if (oldModelClassName.equals(CourseRegisterClp.class.getName())) {
+			return translateInputCourseRegister(oldModel);
+		}
+
 		return oldModel;
 	}
 
@@ -131,6 +136,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputCourseRegister(BaseModel<?> oldModel) {
+		CourseRegisterClp oldClpModel = (CourseRegisterClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getCourseRegisterRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInput(Object obj) {
 		if (obj instanceof BaseModel<?>) {
 			return translateInput((BaseModel<?>)obj);
@@ -150,6 +165,11 @@ public class ClpSerializer {
 
 		if (oldModelClassName.equals("com.liferay.course.model.impl.CourseImpl")) {
 			return translateOutputCourse(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"com.liferay.course.model.impl.CourseRegisterImpl")) {
+			return translateOutputCourseRegister(oldModel);
 		}
 
 		return oldModel;
@@ -248,12 +268,21 @@ public class ClpSerializer {
 			return new com.liferay.course.CourseNameException();
 		}
 
+		if (className.equals(
+					"com.liferay.course.CourseRegistrationStatusException")) {
+			return new com.liferay.course.CourseRegistrationStatusException();
+		}
+
 		if (className.equals("com.liferay.course.CourseStatusException")) {
 			return new com.liferay.course.CourseStatusException();
 		}
 
 		if (className.equals("com.liferay.course.NoSuchCourseException")) {
 			return new com.liferay.course.NoSuchCourseException();
+		}
+
+		if (className.equals("com.liferay.course.NoSuchCourseRegisterException")) {
+			return new com.liferay.course.NoSuchCourseRegisterException();
 		}
 
 		return throwable;
@@ -265,6 +294,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setCourseRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputCourseRegister(BaseModel<?> oldModel) {
+		CourseRegisterClp newModel = new CourseRegisterClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setCourseRegisterRemoteModel(oldModel);
 
 		return newModel;
 	}

@@ -34,11 +34,36 @@
 			<finder-column name="groupId"></finder-column>
 		</finder>
 	</entity>
+	<entity name="CourseRegister" local-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="courseRegisterId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="courseId" type="long"></column>
+        <column name="status" type="int"></column>
+        <finder name="status" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+	</entity>
 	<exceptions>
 		<exception>CourseName</exception>
 		<exception>CourseDescription</exception>
 		<exception>CourseLecturer</exception>
 		<exception>CourseDuration</exception>
 		<exception>CourseStatus</exception>
+        <exception>CourseRegistrationStatus</exception>
 	</exceptions>
 </service-builder>

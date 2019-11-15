@@ -34,8 +34,36 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="com.liferay.course.model.impl.CourseRegisterModelImpl">
+		<attributes>
+			<id name="courseRegisterId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="courseId" />
+			<basic name="status" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="com.liferay.course.model.impl.CourseImpl" name="Course">
 		<table name="COURSE_Course" />
+		<attributes />
+	</entity>
+	<entity class="com.liferay.course.model.impl.CourseRegisterImpl" name="CourseRegister">
+		<table name="COURSE_CourseRegister" />
 		<attributes />
 	</entity>
 </entity-mappings>

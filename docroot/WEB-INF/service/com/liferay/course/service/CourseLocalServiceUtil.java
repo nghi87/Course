@@ -355,6 +355,12 @@ public class CourseLocalServiceUtil {
 		return getService().getCourses(groupId, start, end);
 	}
 
+	public static java.util.List<com.liferay.course.model.Course> getCourses(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCourses(groupId);
+	}
+
 	public static com.liferay.course.model.Course updateCourse(long userId,
 		long courseId, java.lang.String name, java.lang.String description,
 		java.lang.String lecturer, int duration, boolean status,
@@ -364,12 +370,6 @@ public class CourseLocalServiceUtil {
 		return getService()
 				   .updateCourse(userId, courseId, name, description, lecturer,
 			duration, status, serviceContext);
-	}
-
-	public static java.util.List<com.liferay.course.model.Course> getCourses(
-		long groupId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().getCourses(groupId);
 	}
 
 	public static void clearService() {

@@ -14,7 +14,7 @@
 
 package com.liferay.course.service.base;
 
-import com.liferay.course.service.CourseServiceUtil;
+import com.liferay.course.service.CourseRegisterServiceUtil;
 
 import java.util.Arrays;
 
@@ -22,8 +22,8 @@ import java.util.Arrays;
  * @author ces
  * @generated
  */
-public class CourseServiceClpInvoker {
-	public CourseServiceClpInvoker() {
+public class CourseRegisterServiceClpInvoker {
+	public CourseRegisterServiceClpInvoker() {
 		_methodName24 = "getBeanIdentifier";
 
 		_methodParameterTypes24 = new String[] {  };
@@ -37,12 +37,12 @@ public class CourseServiceClpInvoker {
 		Object[] arguments) throws Throwable {
 		if (_methodName24.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes24, parameterTypes)) {
-			return CourseServiceUtil.getBeanIdentifier();
+			return CourseRegisterServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName25.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes25, parameterTypes)) {
-			CourseServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			CourseRegisterServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}

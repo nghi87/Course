@@ -27,4 +27,16 @@
 		<field name="duration" type="int" />
 		<field name="status" type="boolean" />
 	</model>
+	<model name="com.liferay.course.model.CourseRegister">
+		<field name="uuid" type="String" />
+		<field name="courseRegisterId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="courseId" type="long" />
+		<field name="status" type="int" />
+	</model>
 </model-hints>

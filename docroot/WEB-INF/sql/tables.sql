@@ -13,3 +13,16 @@ create table COURSE_Course (
 	duration INTEGER,
 	status BOOLEAN
 );
+
+create table COURSE_CourseRegister (
+	uuid_ VARCHAR(75) null,
+	courseRegisterId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	courseId LONG,
+	status INTEGER
+);

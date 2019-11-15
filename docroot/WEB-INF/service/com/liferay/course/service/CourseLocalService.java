@@ -318,15 +318,15 @@ public interface CourseLocalService extends BaseLocalService,
 		long groupId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.liferay.course.model.Course> getCourses(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
 	public com.liferay.course.model.Course updateCourse(long userId,
 		long courseId, java.lang.String name, java.lang.String description,
 		java.lang.String lecturer, int duration, boolean status,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
-
-	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public java.util.List<com.liferay.course.model.Course> getCourses(
-		long groupId)
-		throws com.liferay.portal.kernel.exception.SystemException;
 }

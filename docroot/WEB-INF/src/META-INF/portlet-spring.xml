@@ -4,4 +4,7 @@
 	<bean id="com.liferay.course.service.CourseLocalService" class="com.liferay.course.service.impl.CourseLocalServiceImpl" />
 	<bean id="com.liferay.course.service.CourseService" class="com.liferay.course.service.impl.CourseServiceImpl" />
 	<bean id="com.liferay.course.service.persistence.CoursePersistence" class="com.liferay.course.service.persistence.CoursePersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.course.service.CourseRegisterLocalService" class="com.liferay.course.service.impl.CourseRegisterLocalServiceImpl" />
+	<bean id="com.liferay.course.service.CourseRegisterService" class="com.liferay.course.service.impl.CourseRegisterServiceImpl" />
+	<bean id="com.liferay.course.service.persistence.CourseRegisterPersistence" class="com.liferay.course.service.persistence.CourseRegisterPersistenceImpl" parent="basePersistence" />
 </beans>
